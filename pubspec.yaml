@@ -1,7 +1,7 @@
 name: flutter_accessibility_checker
 description: "A new Flutter plugin project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/Wafelkertas/Flutter-Accessibily-Checker
 
 environment:
   sdk: ^3.7.2

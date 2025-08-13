@@ -27,7 +27,7 @@ public class FlutterAccessibilityCheckerPlugin: NSObject, FlutterPlugin {
                   anyEnabled = anyEnabled ||
                       UIAccessibility.shouldDifferentiateWithoutColor ||
                       UIAccessibility.buttonShapesEnabled ||
-                      UIAccessibility.onOffSwitchLabelsEnabled ||
+                      UIAccessibility.isOnOffSwitchLabelsEnabled ||
                       UIAccessibility.isDarkerSystemColorsEnabled ||
                       UIAccessibility.isGuidedAccessEnabled
               }

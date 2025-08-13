@@ -2,7 +2,7 @@ name: flutter_accessibility_checker
 description: "A Flutter plugin for detecting whether any accessibility features are enabled
   on iOS or Android devices. Useful for enhancing security, preventing UI abuse,
   or adapting UI behavior based on user accessibility settings."
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/Wafelkertas/Flutter-Accessibily-Checker
 
 environment:

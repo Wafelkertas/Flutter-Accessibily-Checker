@@ -14,20 +14,25 @@ public class FlutterAccessibilityCheckerPlugin: NSObject, FlutterPlugin {
           result("iOS " + UIDevice.current.systemVersion)
 
       case "isAnyFeatureOn":
-          let anyEnabled =
-              UIAccessibility.isVoiceOverRunning ||
-              UIAccessibility.isInvertColorsEnabled ||
-              UIAccessibility.isReduceMotionEnabled ||
-              UIAccessibility.isReduceTransparencyEnabled ||
-              UIAccessibility.isBoldTextEnabled ||
-              UIAccessibility.isGrayscaleEnabled ||
-              UIAccessibility.isSwitchControlRunning ||
-              UIAccessibility.shouldDifferentiateWithoutColor ||
-              UIAccessibility.buttonShapesEnabled ||
-              UIAccessibility.onOffSwitchLabelsEnabled ||
-              UIAccessibility.isDarkerSystemColorsEnabled ||
-              UIAccessibility.isGuidedAccessEnabled
-          result(anyEnabled)
+              if #available(iOS 14.0, *) {
+                  let anyEnabled =
+                      UIAccessibility.isVoiceOverRunning ||
+                      UIAccessibility.isInvertColorsEnabled ||
+                      UIAccessibility.isReduceMotionEnabled ||
+                      UIAccessibility.isReduceTransparencyEnabled ||
+                      UIAccessibility.isBoldTextEnabled ||
+                      UIAccessibility.isGrayscaleEnabled ||
+                      UIAccessibility.isSwitchControlRunning ||
+                      UIAccessibility.shouldDifferentiateWithoutColor ||
+                      UIAccessibility.buttonShapesEnabled ||
+                      UIAccessibility.onOffSwitchLabelsEnabled ||
+                      UIAccessibility.isDarkerSystemColorsEnabled ||
+                      UIAccessibility.isGuidedAccessEnabled
+                  result(anyEnabled)
+              } else {
+                  // Fallback for iOS < 14
+                  result(false)
+              }
 
       default:
           result(FlutterMethodNotImplemented)
